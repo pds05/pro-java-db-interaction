@@ -1,27 +1,4 @@
-2024-11-11 21:21:31 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLNonTransientException: Нет данных
-No data is available [2000-200]
-2024-11-15 19:00:05 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "USERNAME" не найден
-Column "USERNAME" not found; SQL statement:
-insert into users (username) values ('user1'); [42122-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
-	at org.h2.message.DbException.get(DbException.java:205)
-	at org.h2.message.DbException.get(DbException.java:181)
-	at org.h2.table.Table.getColumn(Table.java:703)
-	at org.h2.command.Parser.parseColumn(Parser.java:1450)
-	at org.h2.command.Parser.parseColumnList(Parser.java:1435)
-	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1804)
-	at org.h2.command.Parser.parseInsert(Parser.java:1749)
-	at org.h2.command.Parser.parsePrepared(Parser.java:954)
-	at org.h2.command.Parser.parse(Parser.java:843)
-	at org.h2.command.Parser.parse(Parser.java:815)
-	at org.h2.command.Parser.prepareCommand(Parser.java:738)
-	at org.h2.engine.Session.prepareLocal(Session.java:657)
-	at org.h2.engine.Session.prepareCommand(Session.java:595)
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
-	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:164)
-	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
-	at ru.flamexander.db.interaction.ex00_simple_intro.Application.insert(Application.java:40)
-	at ru.flamexander.db.interaction.ex00_simple_intro.Application.main(Application.java:13)
+2024-11-19 13:51:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "USERS" уже существует
+Table "USERS" already exists; SQL statement:
+create table users(    id       bigserial primary key,    login    varchar(255),    password varchar(255),    nickname varchar(255)) [42101-200]
