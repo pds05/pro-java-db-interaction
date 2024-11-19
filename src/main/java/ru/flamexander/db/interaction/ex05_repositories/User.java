@@ -2,17 +2,17 @@ package ru.flamexander.db.interaction.ex05_repositories;
 
 @RepositoryTable(title = "users")
 public class User {
-    @RepositoryIdField
-    @RepositoryField
+    @RepositoryIdField(name="f_id")
+    @RepositoryField()
     private Long id;
 
-    @RepositoryField
+    @RepositoryField(name="f_login")
     private String login;
 
-    @RepositoryField
+    @RepositoryField(name="f_password")
     private String password;
 
-    @RepositoryField
+    @RepositoryField(name="f_nickname")
     private String nickname;
 
     public Long getId() {

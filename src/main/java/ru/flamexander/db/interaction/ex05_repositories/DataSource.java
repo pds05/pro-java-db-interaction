@@ -29,7 +29,7 @@ public class DataSource {
         try {
             connection = DriverManager.getConnection(url);
             statement = connection.createStatement();
-            init();
+//            init();
         } catch (SQLException e) {
             e.printStackTrace();
             throw new ApplicationInitializationException();
@@ -72,7 +72,8 @@ public class DataSource {
                             "    id            bigserial primary key," +
                             "    amount        bigint," +
                             "    tp            varchar(255)," +
-                            "    status        varchar(255)" +
+                            "    status        varchar(255)," +
+                            "    accountType  varchar(255)" +
                             ")"
             );
         } catch (SQLException e) {
